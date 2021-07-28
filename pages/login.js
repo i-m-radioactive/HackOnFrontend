@@ -1,45 +1,11 @@
-import React, { useEffect } from 'react'
-import Logins from '../components/Login'
-import nookies from 'nookies'
-import Layout from '../components/Layout'
-import LoginForm from '../components/LoginForm'
-import firebase from '../firebase.js';
+import React from 'react'
 
-
-export async function getServerSideProps(context) {
-
-  const cookies = nookies.get(context);
-
-  if (cookies.token !== "") {
-    return {
-      redirect: {
-        destination: '/dashboard',
-        permanent: false
-      }
-    }
-  }
-
-  // if (await firebase.auth().currentUser) {
-  //   return {
-  //     props:{
-  //       user:firebase.auth().
-  //     }
-  //   }
-  // }
-
-  return {
-    props: {}
-  }
-
-}
-
-const Login = () => {
-
+const login = () => {
   return (
-    <Layout>
-      <Logins />
-    </Layout>
+    <div>
+
+    </div>
   )
 }
 
-export default Login
+export default login

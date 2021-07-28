@@ -1,23 +1,23 @@
-@font-face{
+@font-face {
   font-family: Sofia;
-  src:url('../fonts/Sofia Pro Regular Az.otf');
+  src: url("../fonts/Sofia Pro Regular Az.otf");
 }
 
-@font-face{
+@font-face {
   font-family: SofiaLight;
-  src:url('../fonts/Sofia Pro Light Az.otf');
+  src: url("../fonts/Sofia Pro Light Az.otf");
 }
 
-@font-face{
+@font-face {
   font-family: SofiaBold;
-  src:url('../fonts/Sofia Pro Bold Az.otf');
+  src: url("../fonts/Sofia Pro Bold Az.otf");
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Sofia
+  font-family: Sofia;
 }
 
 a {
@@ -27,4 +27,7 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.login-wrapper {
 }
