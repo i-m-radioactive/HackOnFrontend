@@ -1,0 +1,12 @@
+.viewpost{
+ display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+  justify-content: space-evenly;
+ 
+  .container{
+      height:15rem;
+        background-color: aqua;
+  }
+
+}

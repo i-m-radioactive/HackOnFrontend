@@ -1,0 +1,18 @@
+.index{
+
+display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+  justify-content: space-evenly;
+    margin-top: 10rem;
+  .container{
+        box-shadow: 0 4px 8px rgba(0,0,0,0.38);;
+        border-radius: 10px;
+        padding: 2rem;
+        height:20rem;
+        background-color: rgb(196, 199, 194);
+        display: grid;
+        grid-auto-flow: row;
+        font-weight: 800;
+  } 
+}
