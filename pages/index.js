@@ -14,14 +14,14 @@ const index = () => {
     if (searchValue !== "" || searchType === "all") {
       const res = await axios({
         method: 'post',
-        url: 'https://arrow-level-raptor.glitch.me/query',
+        url: 'http://localhost:1337/query',
         headers: {
           'Content-Type': 'application/json'
         },
         data: JSON.stringify({
           query: `{
             posts${searchType === "all" ? "" : `(${searchType}:"${searchValue}")`}{
-              name
+              title
               category
               description
               content{
@@ -72,7 +72,7 @@ const index = () => {
             {data.length === 0 ? <h2>Loading...</h2> :
               data.map((item, i) => {
                 return <div className="single-data" key={i}>
-                  <h2>{item.name}</h2>
+                  <h2>{item.title}</h2>
                   <p>
                     Category :
                     {item.category.map((cat, i) => {

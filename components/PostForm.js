@@ -75,7 +75,7 @@ const PostForm = () => {
 
         const res = await axios({
             method: 'post',
-            url: 'https://arrow-level-raptor.glitch.me/mutation',
+            url: 'http://localhost:1337/mutation',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem("_token")
@@ -83,7 +83,7 @@ const PostForm = () => {
             data: JSON.stringify({
                 query: `mutation add($body:[PostContent]!,$cat:[String]!){
                 createPost(data:{
-                    name: "${postData.name}",
+                    title: "${postData.name}",
                     category: $cat,
                     description: "${postData.description}",
                     content: $body
