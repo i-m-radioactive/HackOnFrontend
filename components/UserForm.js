@@ -20,7 +20,7 @@ const UserForm = () => {
     useEffect(async () => {
         const res = await axios({
             method: 'post',
-            url: 'https://arrow-level-raptor.glitch.me/query',
+            url: 'https://nostalgic-merciful-pedestrian.glitch.me/query',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -63,7 +63,7 @@ const UserForm = () => {
 
         const res = await axios({
             method: 'post',
-            url: 'https://arrow-level-raptor.glitch.me/mutation',
+            url: 'https://nostalgic-merciful-pedestrian.glitch.me/mutation',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem("_token")
