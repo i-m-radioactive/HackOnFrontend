@@ -6,8 +6,8 @@ const UserForm = () => {
     const authContext = useAuth();
     const { setError, setShow } = useContext(ErrorContext);
     const [userData, setUserData] = useState({
-        email: "",
-        name: "",
+        email: `${authContext.user.email}`,
+        name: `${authContext.user.displayName}`,
         phone: "",
         pincode: "",
         address: "",
@@ -15,18 +15,18 @@ const UserForm = () => {
         state: ""
     });
 
+    console.log(authContext.user.displayName)
+
     useEffect(async () => {
         const res = await axios({
             method: 'post',
-            url: 'https://arrow-level-raptor.glitch.me/query',
+            url: 'https://https://arrow-level-raptor.glitch.me/query',
             headers: {
                 'Content-Type': 'application/json'
             },
             data: JSON.stringify({
                 query: `{
                     user(email:"${authContext.user.email}"){
-                        email
-                        name
                         phone
                         pincode
                         address
@@ -39,7 +39,14 @@ const UserForm = () => {
         })
         console.log(res)
         if (res.data.data.user) {
-            setUserData(res.data.data.user)
+            setUserData({
+                ...res.data.data.user,
+                email: `${authContext.user.email}`,
+                name: `${authContext.user.displayName}`
+            })
+        } else {
+            setError(JSON.stringify("Please update all your details."));
+            setShow(true);
         }
     }, [])
 
@@ -54,10 +61,9 @@ const UserForm = () => {
         console.log(userData)
         console.log(localStorage.getItem("_token"))
 
-
         const res = await axios({
             method: 'post',
-            url: 'http://localhost:1337/mutation',
+            url: 'https://https://arrow-level-raptor.glitch.me/mutation',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem("_token")
@@ -91,11 +97,11 @@ const UserForm = () => {
             <form>
                 <div className="div">
                     <label>Name</label>
-                    <input name="name" value={userData.name} onChange={inputHandler} />
+                    <input name="name" value={userData.name} disabled={true} onChange={inputHandler} />
                 </div >
                 <div className="div">
                     <label>Email</label>
-                    <input name="email" value={userData.email} onChange={inputHandler} />
+                    <input name="email" value={userData.email} disabled={true} onChange={inputHandler} />
                 </div>
                 <div className="div">
                     <label>Phone</label>

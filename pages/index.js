@@ -14,7 +14,7 @@ const index = () => {
     if (searchValue !== "" || searchType === "all") {
       const res = await axios({
         method: 'post',
-        url: 'http://localhost:1337/query',
+        url: 'https://https://arrow-level-raptor.glitch.me/query',
         headers: {
           'Content-Type': 'application/json'
         },
