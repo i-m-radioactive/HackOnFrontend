@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import { useAuth } from '../context/authContext'
 import Link from 'next/link'
 import PostForm from '../components/PostForm';
-import UserForm from '../components/userForm';
+import UserForm from '../components/UserForm';
 
 const dashboard = () => {
   const [view, setView] = useState("UF");
