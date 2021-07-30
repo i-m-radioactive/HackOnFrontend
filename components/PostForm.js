@@ -75,7 +75,7 @@ const PostForm = () => {
 
         const res = await axios({
             method: 'post',
-            url: 'https://https://arrow-level-raptor.glitch.me/mutation',
+            url: 'https://arrow-level-raptor.glitch.me/mutation',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem("_token")
